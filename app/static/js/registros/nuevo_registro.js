@@ -70,7 +70,7 @@ btn_cancelar.addEventListener("click", (e) => {
     })
     .then((result) => {
         if(result.isConfirmed){
-            window.location.href = "/registros"
+            window.location.href = "/main"
         }
     });
 });

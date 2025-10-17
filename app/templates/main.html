@@ -27,7 +27,7 @@
                 </header>
                 <div class="card-content" style="justify-content: center; align-items: center; display: flex;">
                     <div class="content">
-                        <h4 class="title is-4">0</h5>
+                        <h4 class="title is-4">{{ conteo[0] }}</h5>
                     </div>
                 </div>
             </div>
@@ -47,5 +47,17 @@
 {% endblock %}
 
 {% block scripts %}
-
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <script>
+            Swal.fire({
+                title: "Notificación!",
+                text: "{{ message }}",
+                icon: "{{ category }}"
+            })
+        </script>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 {% endblock %}

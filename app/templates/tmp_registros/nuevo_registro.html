@@ -24,7 +24,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control">
-                                    <span class="select">
+                                    <span class="select is-fullwidth">
                                         <select name="tipo_documento" id="tipo_documento" required>
                                             <option value=""></option>
                                             {% for tipo in tipos %}
@@ -115,7 +115,7 @@
                         <div class="field-body">
                             <div class="field is-grouped">
                                 <p class="control">
-                                    <span class="select">
+                                    <span class="select is-fullwidth">
                                         <select name="depto" id="depto" required>
                                             <option value=""></option>
                                             {% for depto in deptos %}
@@ -137,7 +137,7 @@
                         <div class="field-body">
                             <div class="field is-grouped">
                                 <p class="control">
-                                    <span class="select">
+                                    <span class="select is-fullwidth">
                                         <select name="municipio" id="municipio" required></select>
                                     </span>
                                 </p>
@@ -154,7 +154,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control">
-                                    <span class="select">
+                                    <span class="select is-fullwidth">
                                         <select name="sexo" id="sexo" required>
                                             <option value=""></option>
                                             <option value="H">Hombre</option>
@@ -172,7 +172,7 @@
                         </div>
                         <div class="field-body">
                             <div class="field">
-                                <span class="select">
+                                <span class="select is-fullwidth" style="font-size: small;">
                                     <select name="etnia" id="etnia" required>
                                         <option value=""></option>
                                         {% for etnia in etnias %}
@@ -184,27 +184,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="field">
+                    <button type="submit" class="button is-success is-fullwidth">
+                        <span class="icon is-small"><i aria-hidden="true"><img src="{{ url_for('static', filename='img/icons/guardar.png') }}" alt="icon-guardar"></i></span>
+                        <span>Guardar</span>
+                    </button>
+                </div>
+                <div class="field">
+                    <a id="btn_cancelar" class="button is-danger is-fullwidth">
+                        <span class="icon is-small"><i aria-hidden="true"><img src="{{ url_for('static', filename='img/icons/cancelar.png') }}" alt="icon-cancelar"></i></span>
+                        <span>Cancelar</span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="field is-grouped is-grouped-centered">
-            <p class="control">
-                <button type="submit" class="button is-success">
-                    <span class="icon is-small"><i aria-hidden="true"><img src="{{ url_for('static', filename='img/icons/guardar.png') }}" alt="icon-guardar"></i></span>
-                    <span>Guardar</span>
-                </button>
-            </p>
-            <p class="control">
-                <a id="btn_cancelar" class="button is-danger">
-                    <span class="icon is-small"><i aria-hidden="true"><img src="{{ url_for('static', filename='img/icons/cancelar.png') }}" alt="icon-cancelar"></i></span>
-                    <span>Cancelar</span>
-                </a>
-            </p>
         </div>
     </form>
 </div>
 {% endblock %}
 
-{% block foot_scripts %}
+{% block scripts %}
 <script src="{{ url_for('static', filename='js/registros/nuevo_registro.js') }}"></script>
 {% endblock %}

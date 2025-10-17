@@ -40,15 +40,15 @@ def add_registro():
                                           email, depto, nom_depto, municipio, nom_municipio, sexo, etnia, usuario_registro)
         
         flash("Registro Guardado Exitosamente!", "success")
-        return redirect(url_for('registros.registros'))
+        return redirect(url_for('index.main'))
     
     except error.Error as e:
         flash(f"Se presentó un error inesperado: {e.msg}", "error")
-        return redirect(url_for('registros.registros'))
+        return redirect(url_for('index.main'))
     
     except Exception as ex:
         flash(f"Se presentó un error inesperado: {ex}", "error")
-        return redirect(url_for('registros.registros'))
+        return redirect(url_for('index.main'))
 
 @bp_registros.get('/editar_registro/<int:id>')
 def editar_registro(id):

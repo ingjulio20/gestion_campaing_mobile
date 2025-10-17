@@ -22,8 +22,11 @@
 <body>
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a href="{{ url_for('index.main') }}" class="navbar-item">
-                #YOMEATREVO
+            <a href="#" class="navbar-item">
+                <span><strong>Bienvenido(a): </strong>{{ session['name'] }}</span>
+                <span hidden>
+                    <input type="text" name="profile" id="profile" class="input" value="{{ session['profile'] }}" readonly hidden>
+                </span>
             </a>
             <!-- Burger -->
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -42,20 +45,11 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar is-fixed-bottom">
-        <div class="navbar-brand">
-            <a href="#" class="navbar-item">
-                <span><strong>Bienvenido(a): </strong>{{ session['name'] }}</span>
-                <span hidden>
-                    <input type="text" name="profile" id="profile" class="input" value="{{ session['profile'] }}" readonly hidden>
-                </span>
-            </a>
-        </div>
-    </nav>
     {% block content %}
     {% endblock %}
 </body>
 
+<script src="{{ url_for('static', filename='js/sweetalert2.all.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/nav-burger.js') }}"></script>
 {% block scripts %}
 {% endblock %}
