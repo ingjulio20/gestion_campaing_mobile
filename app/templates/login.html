@@ -18,7 +18,7 @@
     <div class="box login">
         <img class="centrar-imagen" src="{{url_for('static', filename='img/logo2.png')}}" alt="logo_campaña" width="220px" height="220px">
         <!-- <td><img class="centrar-imagen" src="{{url_for('static', filename='assets/logo_empresa.webp')}}" alt="logo_empresa"></td> -->
-        <form id="formLoginAccess" action="#" method="post">
+        <form id="formLoginAccess" action="{{ url_for('index.login_access') }}" method="post">
             <div class="field">
                 <p class="control has-icons-left">
                 <input class="input" type="text" placeholder="Usuario" name="userId" id="userId">

@@ -1,0 +1,51 @@
+{% extends 'menu.html' %}
+
+{% block css %}
+{% endblock %}
+{% block title %}Panel Principal{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <div class="field is-grouped">
+        <p class="control">
+            <div class="card">
+                <header class="card-header" style="background-color: #8e44ad;">
+                    <p class="card-header-title" style="color: white;">Meta Total de Votos</p>
+                </header>
+                <div class="card-content" style="justify-content: center; align-items: center; display: flex;">
+                    <div class="content">
+                        <h4 class="title is-4">70.000</h5>
+                    </div>
+                </div>
+            </div>
+        </p>
+        <p class="control">
+            <div class="card">
+                <header class="card-header" style="background-color: #8e44ad;">
+                    <p class="card-header-title" style="color: white;">Registro de Votos</p>
+                </header>
+                <div class="card-content" style="justify-content: center; align-items: center; display: flex;">
+                    <div class="content">
+                        <h4 class="title is-4">0</h5>
+                    </div>
+                </div>
+            </div>
+        </p>
+    </div>
+    <div class="box">
+        <div class="field">
+            <p class="control">
+                <a href="{{ url_for('registros.nuevo_registro') }}" class="button is-normal is-info is-fullwidth">
+                    <span class="icon is-small"><i aria-hidden="true"><img src="{{ url_for('static', filename='img/icons/añadir.png') }}" alt="icon-añadir"></i></span>
+                    <span>Nuevo Registro</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

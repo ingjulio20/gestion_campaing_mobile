@@ -3,16 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bulma Framework -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulmaswatch.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma-tooltip.min.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sweetalert2.min.css') }}">
+    <!-- FA Icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     {% block css %}
     {% endblock %}
+    <style>
+        .main-content {
+            padding-top: 3.25rem; /* Altura típica del navbar en Bulma */
+        }
+    </style>
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-    
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a href="{{ url_for('index.main') }}" class="navbar-item">
+                #YOMEATREVO
+            </a>
+            <!-- Burger -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="{{ url_for('index.logout')}}" class="navbar-item">
+                    <span class="icon is-small"><img src="{{ url_for('static', filename='img/icons/salida.png') }}" alt="icon-salida"></span>
+                    <span>Salir</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar is-fixed-bottom">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-item">
+                <span><strong>Bienvenido(a): </strong>{{ session['name'] }}</span>
+                <span hidden>
+                    <input type="text" name="profile" id="profile" class="input" value="{{ session['profile'] }}" readonly hidden>
+                </span>
+            </a>
+        </div>
+    </nav>
     {% block content %}
     {% endblock %}
 </body>
 
-{% block css %}
+<script src="{{ url_for('static', filename='js/nav-burger.js') }}"></script>
+{% block scripts %}
 {% endblock %}
 </html>

@@ -12,6 +12,10 @@ bcrypt = Bcrypt()
 def index():
     return render_template('login.html')
 
+@bp_index.get('/main')
+def main():
+    return render_template('main.html')
+
 #Ruta Metodo Post Recorrido BD usuarios y perfiles y acceso
 @bp_index.post('/login_access')
 def login_access():

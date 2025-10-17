@@ -3,6 +3,8 @@ from flask_bcrypt import Bcrypt
 
 #Importe de Blurprints
 from app.routes.index_routes import bp_index
+from app.routes.deptos_routes import bp_deptos
+from app.routes.registros_routes import bp_registros
 
 def application():
     app = Flask(__name__)
@@ -13,6 +15,8 @@ def application():
 
     #Registro de Blueprint
     app.register_blueprint(bp_index)
+    app.register_blueprint(bp_deptos)
+    app.register_blueprint(bp_registros)
 
     #Ruta Metodo para verificar las URL y Redireccionar al Login
     @app.before_request
